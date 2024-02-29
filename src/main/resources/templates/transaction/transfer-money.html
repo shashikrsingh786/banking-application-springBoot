@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.thymeleaf.org">
+ <body onload="makeActive('transfer')">
+ <div th:insert="menu.html"></div>
+ <div class='dvv'>
+   <label class='lah' style='color:green'>You are transferring to <span th:text="${name}"></span></label>
+  </div> 
+  <form class="offset-4" style="width:550px" action="transfer-money">
+      <!-- Form Group 1: Name -->
+      <div class="form-group">
+        <label for="amount">Enter amount: </label>
+        <input type="number"  class="form-control" id="amount" name='wamount' placeholder="Enter amount" required>
+      </div>
+
+      <!-- Form Group 2: Email -->
+      <div class="form-group magic">
+        <label for="accountno">Enter Account No. :</label>
+        <input type="text" class="form-control"   name='accountNo' id="accountno" placeholder="Enter account Number " required>
+      </div>
+
+
+      <!-- Submit Button -->
+      <button    class="btn btn-primary btn-block show" onclick="return checkAmountLimit2()">Submit</button>
+       <button  type="submit" class="btn btn-primary btn-block magic" onclick="return submitForm()">Submit</button>
+    </form>
+  <div class='dvv'>
+   <label class='lah' id="error" style='color:red' th:text="${msg}"></label>
+  </div> 
+ </body>
+</html>
