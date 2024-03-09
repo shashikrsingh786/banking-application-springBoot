@@ -89,7 +89,7 @@ public class TransactionController {
 			return "transaction/transfer-money";
 		}
 		if(accountNo == an) {
-			model.addAttribute("msg","Chutiya h kya");
+			model.addAttribute("msg","You can't send money to yourself");
 			return "transaction/transfer-money";
 		}
 		transactionService.withdrawAmount(wamount,an);
